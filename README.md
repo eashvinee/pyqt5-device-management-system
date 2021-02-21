@@ -1,0 +1,1 @@
+# pyqt5-device-management-system

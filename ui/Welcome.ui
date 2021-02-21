@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>welcomeWindow</class>
+ <widget class="QMainWindow" name="welcomeWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDevices">
+    <property name="title">
+     <string>Devices</string>
+    </property>
+    <widget class="QMenu" name="menuBrand">
+     <property name="title">
+      <string>Brand</string>
+     </property>
+     <addaction name="actionAll_Brand_2"/>
+     <addaction name="actionAdd_New_3"/>
+    </widget>
+    <addaction name="actionAll_Devices"/>
+    <addaction name="actionAdd_New"/>
+    <addaction name="separator"/>
+    <addaction name="menuBrand"/>
+   </widget>
+   <widget class="QMenu" name="menuEmployee">
+    <property name="title">
+     <string>Employee</string>
+    </property>
+    <addaction name="actionAll_Employee"/>
+    <addaction name="actionAdd_New_2"/>
+   </widget>
+   <widget class="QMenu" name="menuManagement">
+    <property name="title">
+     <string>Management</string>
+    </property>
+    <addaction name="actionAssign_Device"/>
+    <addaction name="actionDevices_History"/>
+   </widget>
+   <addaction name="menuManagement"/>
+   <addaction name="menuDevices"/>
+   <addaction name="menuEmployee"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAll_Devices">
+   <property name="text">
+    <string>All Devices</string>
+   </property>
+  </action>
+  <action name="actionAdd_New">
+   <property name="text">
+    <string>Add New Device</string>
+   </property>
+  </action>
+  <action name="actionAll_Employee">
+   <property name="text">
+    <string>All Employee</string>
+   </property>
+  </action>
+  <action name="actionAdd_New_2">
+   <property name="text">
+    <string>Add New Employee</string>
+   </property>
+  </action>
+  <action name="actionBrand">
+   <property name="text">
+    <string>Brand</string>
+   </property>
+  </action>
+  <action name="actionAll_Brand_2">
+   <property name="text">
+    <string>All Brand</string>
+   </property>
+  </action>
+  <action name="actionAdd_New_3">
+   <property name="text">
+    <string>Add New Brand</string>
+   </property>
+  </action>
+  <action name="actionAssign_Device">
+   <property name="text">
+    <string>Assign Device</string>
+   </property>
+  </action>
+  <action name="actionDevices_History">
+   <property name="text">
+    <string>Devices History</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

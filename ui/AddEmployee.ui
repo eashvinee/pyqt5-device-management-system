@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="lblAddEmpHeading">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -26,7 +26,7 @@
     <string>Add Employee</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="lblAddEmpName">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -39,7 +39,7 @@
     <string>Employee Name</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="lblAddEmpID">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -52,7 +52,7 @@
     <string>Employee ID</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_4">
+  <widget class="QLabel" name="lblAddEmpFather">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -65,7 +65,7 @@
     <string>Employee Father`s Name</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_5">
+  <widget class="QLabel" name="lblAddEmpMobile">
    <property name="geometry">
     <rect>
      <x>350</x>
@@ -78,7 +78,7 @@
     <string>Mobile</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_6">
+  <widget class="QLabel" name="lblAddEmpEmail">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -91,7 +91,7 @@
     <string>Email</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_7">
+  <widget class="QLabel" name="lblAddEmpAddress">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -104,7 +104,7 @@
     <string>Address</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_8">
+  <widget class="QLabel" name="lblAddEmpImage">
    <property name="geometry">
     <rect>
      <x>410</x>
@@ -117,7 +117,7 @@
     <string>Employee Image</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="leAddEmpName">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -127,7 +127,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="leAddEmpID">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -137,7 +137,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="leAddEmpFather">
    <property name="geometry">
     <rect>
      <x>280</x>
@@ -147,7 +147,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
+  <widget class="QLineEdit" name="leAddEmpMobile">
    <property name="geometry">
     <rect>
      <x>410</x>
@@ -157,7 +157,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_5">
+  <widget class="QLineEdit" name="leAddEmpEmail">
    <property name="geometry">
     <rect>
      <x>180</x>
@@ -167,7 +167,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit">
+  <widget class="QTextEdit" name="teAddEmpAddress">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -177,7 +177,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label_9">
+  <widget class="QLabel" name="lblAddEmpImgContainer">
    <property name="geometry">
     <rect>
      <x>410</x>
@@ -193,7 +193,7 @@
     <string>Image</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="btnAddEmpBrowseImage">
    <property name="geometry">
     <rect>
      <x>530</x>
@@ -206,7 +206,7 @@
     <string>Browse</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="btnAddEmpImageRemove">
    <property name="geometry">
     <rect>
      <x>580</x>
@@ -219,7 +219,7 @@
     <string>[x]</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="btnAddEmpSave">
    <property name="geometry">
     <rect>
      <x>100</x>

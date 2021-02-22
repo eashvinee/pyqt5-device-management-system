@@ -16,7 +16,7 @@ class AddEmployee(QWidget):
         self.setWindowIcon(PyQt5.QtGui.QIcon('balloon.svg')) 
         self.setWindowFlags(PyQt5.QtCore.Qt.WindowCloseButtonHint)
 
-        print(dir(self.ui))
+        #print(dir(self.ui))
         #'lblAddEmpAddress', 'lblAddEmpEmail', 'lblAddEmpFather', 'lblAddEmpHeading', 'lblAddEmpID', 'lblAddEmpImage', 'lblAddEmpImgContainer', 'lblAddEmpMobile', 'lblAddEmpName', 'leAddEmpEmail', 'leAddEmpFather', 'leAddEmpID', 'leAddEmpMobile', 'leAddEmpName','teAddEmpAddress'
         #btnAddEmpBrowseImage', 'btnAddEmpImageRemove', 'btnAddEmpSave'
         self.ui.btnAddEmpSave.clicked.connect(self.btn_addEmpSave)

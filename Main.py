@@ -7,6 +7,7 @@ import sys
 import sqlite3
 
 from src.AddEmployee import AddEmployee
+from src.AllEmployee import AllEmployee
 
 
 class Main(QMainWindow):
@@ -16,7 +17,11 @@ class Main(QMainWindow):
         #self.setWindowFlags(PyQt5.QtCore.Qt.FramelessWindowHint) 
         self.setWindowIcon(PyQt5.QtGui.QIcon('balloon.svg')) 
         self.addEmployee =None
+        self.allEmployee =None
+        
         self.ui.actionAdd_New_Employee.triggered.connect(self.action_Add_New_Employee)    
+        self.ui.actionAll_Employee.triggered.connect(self.action_All_Employee)    
+
         #print(dir(self.ui.actionAdd_New_Employee.triggered))
         #'actionAdd_New_Brand', 'actionAdd_New_Device', 'actionAdd_New_Employee', 'actionAll_Brand', 'actionAll_Devices', 'actionAll_Employee', 'actionAssign_Device', 'actionBrand', 'actionDevices_History'
 
@@ -32,7 +37,15 @@ class Main(QMainWindow):
         if not isinstance(self.addEmployee,  AddEmployee):
             self.addEmployee= AddEmployee(self) 
         else:
-            self.addEmployee.activateWindow()        
+            self.addEmployee.activateWindow()   
+
+
+    def action_All_Employee(self, action):
+        if not isinstance(self.allEmployee,  AllEmployee):
+            self.allEmployee= AllEmployee(self) 
+        else:
+            self.allEmployee.activateWindow()   
+
 
     def developedBy(self):
         #pass

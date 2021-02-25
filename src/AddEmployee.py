@@ -8,6 +8,9 @@ import threading
 import time
 import sys
 
+from src.AllEmployee import AllEmployee
+
+
 class AddEmployee(QWidget):
     def __init__(self, pself):
         self.pself=pself
@@ -42,6 +45,12 @@ class AddEmployee(QWidget):
         self.pself.connDB.execute("INSERT INTO tbl_employee (emp_name, father_name, emp_id, mobile, email, address, img) VALUES (:emp_name, :father_name, :emp_id, :mobile, :email, :address, :img )",(emp['emp_name'], emp['father_name'], emp['emp_id'], emp['mobile'], emp['email'],  emp['address'], emp['img']));        
         self.pself.connDB.commit()
         print("insert into database successfully")
+        self.hide()
+        if not isinstance(self.pself.allEmployee,  AllEmployee):
+            self.pself.allEmployee= AllEmployee(self.pself) 
+        else:
+            self.pself.allEmployee.activateWindow()   
+
 
 
     def closeEvent(self, event):

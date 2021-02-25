@@ -44,6 +44,11 @@ class AddEmployee(QWidget):
         print("insert into database successfully")
 
 
+    def closeEvent(self, event):
+        self.pself.addEmployee=None
+        self.pself.activateWindow() 
+
+
 """
 CREATE TABLE tbl_employee(
     ID NTEGER PRIMARY KEY AUTOINCREMENT,

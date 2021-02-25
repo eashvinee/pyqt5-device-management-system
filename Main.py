@@ -15,7 +15,7 @@ class Main(QMainWindow):
         self.ui=PyQt5.uic.loadUi('ui/Welcome.ui', self)
         #self.setWindowFlags(PyQt5.QtCore.Qt.FramelessWindowHint) 
         self.setWindowIcon(PyQt5.QtGui.QIcon('balloon.svg')) 
-
+        self.addEmployee =None
         self.ui.actionAdd_New_Employee.triggered.connect(self.action_Add_New_Employee)    
         #print(dir(self.ui.actionAdd_New_Employee.triggered))
         #'actionAdd_New_Brand', 'actionAdd_New_Device', 'actionAdd_New_Employee', 'actionAll_Brand', 'actionAll_Devices', 'actionAll_Employee', 'actionAssign_Device', 'actionBrand', 'actionDevices_History'
@@ -29,7 +29,10 @@ class Main(QMainWindow):
         self.show()
 
     def action_Add_New_Employee(self, action):
-        self.addEmployee= AddEmployee(self)    
+        if not isinstance(self.addEmployee,  AddEmployee):
+            self.addEmployee= AddEmployee(self) 
+        else:
+            self.addEmployee.activateWindow()        
 
     def developedBy(self):
         #pass

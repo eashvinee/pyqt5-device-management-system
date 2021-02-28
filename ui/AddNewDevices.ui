@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="lblAddDeviceHeading">
    <property name="geometry">
     <rect>
      <x>180</x>
@@ -26,26 +26,11 @@
     <string>Add New Device</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QLabel" name="lblAddDeviceModal">
    <property name="geometry">
     <rect>
-     <x>600</x>
-     <y>70</y>
-     <width>231</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>select</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>480</x>
-     <y>70</y>
+     <x>180</x>
+     <y>110</y>
      <width>101</width>
      <height>17</height>
     </rect>
@@ -54,7 +39,7 @@
     <string>Device Modal</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="lblAddDeviceBrandName">
    <property name="geometry">
     <rect>
      <x>180</x>
@@ -67,12 +52,12 @@
     <string>Device Brand </string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox_2">
+  <widget class="QComboBox" name="cbAddDeviceBrand">
    <property name="geometry">
     <rect>
      <x>300</x>
      <y>70</y>
-     <width>86</width>
+     <width>281</width>
      <height>25</height>
     </rect>
    </property>
@@ -82,11 +67,11 @@
     </property>
    </item>
   </widget>
-  <widget class="QLabel" name="label_4">
+  <widget class="QLabel" name="lblAddDeviceNumber">
    <property name="geometry">
     <rect>
      <x>180</x>
-     <y>110</y>
+     <y>160</y>
      <width>161</width>
      <height>17</height>
     </rect>
@@ -95,22 +80,22 @@
     <string>Device Serial Number </string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="leAddDeviceNumber">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>110</y>
-     <width>481</width>
+     <x>340</x>
+     <y>160</y>
+     <width>171</width>
      <height>25</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label_5">
+  <widget class="QLabel" name="lblAddDeviceManufatureDate">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>560</x>
      <y>160</y>
-     <width>131</width>
+     <width>121</width>
      <height>17</height>
     </rect>
    </property>
@@ -118,21 +103,11 @@
     <string>Manufature Year</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
-   <property name="geometry">
-    <rect>
-     <x>310</x>
-     <y>150</y>
-     <width>171</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_6">
+  <widget class="QLabel" name="lblAddDeviceBuyingDate">
    <property name="geometry">
     <rect>
      <x>180</x>
-     <y>200</y>
+     <y>210</y>
      <width>91</width>
      <height>17</height>
     </rect>
@@ -141,21 +116,27 @@
     <string>Buying Date</string>
    </property>
   </widget>
-  <widget class="QDateEdit" name="dateEdit">
+  <widget class="QDateEdit" name="deAddDeviceBuyingDate">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>190</y>
+     <x>290</x>
+     <y>200</y>
      <width>171</width>
      <height>31</height>
     </rect>
    </property>
+   <property name="displayFormat">
+    <string>dd/MM/yyyy</string>
+   </property>
+   <property name="calendarPopup">
+    <bool>true</bool>
+   </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="btnAddDeviceSave">
    <property name="geometry">
     <rect>
      <x>180</x>
-     <y>270</y>
+     <y>260</y>
      <width>89</width>
      <height>25</height>
     </rect>
@@ -164,11 +145,11 @@
     <string>Save</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_7">
+  <widget class="QLabel" name="lblAddDeviceImage">
    <property name="geometry">
     <rect>
-     <x>590</x>
-     <y>150</y>
+     <x>570</x>
+     <y>210</y>
      <width>151</width>
      <height>17</height>
     </rect>
@@ -177,17 +158,48 @@
     <string>Device Images</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="btnAddDeviceBrowse">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>150</y>
+     <x>690</x>
+     <y>210</y>
      <width>89</width>
      <height>25</height>
     </rect>
    </property>
    <property name="text">
     <string>browse</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cbAddDeviceModal">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>110</y>
+     <width>281</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Select</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QDateEdit" name="deAddDeviceManufatureYear">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>160</y>
+     <width>110</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="displayFormat">
+    <string>yyyy</string>
+   </property>
+   <property name="calendarPopup">
+    <bool>false</bool>
    </property>
   </widget>
  </widget>

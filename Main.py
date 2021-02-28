@@ -12,6 +12,9 @@ from src.AllEmployee import AllEmployee
 from src.AddBrand import AddBrand
 from src.AllBrand import AllBrand
 
+from src.AddDevice import AddDevice
+from src.AllDevice import AllDevice
+
 class Main(QMainWindow):
     def __init__(self):
         super(Main, self).__init__()
@@ -25,11 +28,18 @@ class Main(QMainWindow):
         self.addBrand = None
         self.allBrand = None
 
+        self.addDevice = None
+        self.allDevice = None
+
+
         self.ui.actionAdd_New_Employee.triggered.connect(self.action_Add_New_Employee)    
         self.ui.actionAll_Employee.triggered.connect(self.action_All_Employee)    
 
         self.ui.actionAdd_New_Brand.triggered.connect(self.action_Add_New_Brand)    
         self.ui.actionAll_Brand.triggered.connect(self.action_All_Brand)    
+
+        self.ui.actionAdd_New_Device.triggered.connect(self.action_Add_New_Device)    
+        self.ui.actionAll_Devices.triggered.connect(self.action_All_Devices)    
 
         #print(dir(self.ui.actionAdd_New_Employee.triggered))
         #'actionAdd_New_Brand', 'actionAdd_New_Device', 'actionAdd_New_Employee', 'actionAll_Brand', 'actionAll_Devices', 'actionAll_Employee', 'actionAssign_Device', 'actionBrand', 'actionDevices_History'
@@ -66,7 +76,22 @@ class Main(QMainWindow):
         if not isinstance(self.allBrand,  AllBrand):
             self.allBrand= AllBrand(self) 
         else:
-            self.allBrand.activateWindow()   
+            self.allBrand.activateWindow()  
+
+
+    #action_Add_New_Device
+    def action_Add_New_Device(self, action):
+        if not isinstance(self.addDevice,  AddDevice):
+            self.addDevice= AddDevice(self) 
+        else:
+            self.addDevice.activateWindow()   
+    #action_All_Devices
+    def action_All_Devices(self, action):
+        if not isinstance(self.allDevice,  AllDevice):
+            self.allDevice= AllDevice(self) 
+        else:
+            self.allDevice.activateWindow()  
+             
 
 
     def developedBy(self):

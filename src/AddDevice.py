@@ -23,37 +23,42 @@ class AddDevice(QWidget):
 
         #cbAddDeviceBrand, cbAddDeviceModal, leAddDeviceNumber, deAddDeviceManufatureYear, deAddDeviceBuyingDate, btnAddDeviceBrowse, btnAddDeviceSave
 
-        #print(dir(self.ui.cbAddBrandParent))
-        #rows =  self.pself.connDB.execute("SELECT ID, title FROM tbl_brand WHERE parent=0").fetchall()
+        cbAddDeviceBrand=self.ui.cbAddDeviceBrand
+        #print(dir(self.ui.cbAddDeviceBrand))
+        rows =  self.pself.connDB.execute("SELECT ID, title FROM tbl_brand WHERE parent=0").fetchall()
+        for row in rows:
+            self.ui.cbAddDeviceBrand.addItem(row[1], row[0]);
 
-        #for row in rows:
-            #self.ui.cbAddBrandParent.addItem(row[1], row[0]);
 
-        #self.ui.btnAddBrandSave.clicked.connect(self.btn_AddBrandSave)
+        cbAddDeviceBrand.currentTextChanged.connect(self.cb_device_brand_changed)
+
+        self.ui.btnAddDeviceSave.clicked.connect(self.btn_AddDeviceSave)
 
         self.show()
 
-    def btn_AddBrandSave(self):
-        #pass
-        brand={}
-        brand['title']=self.ui.leAddBrandTitle.text()
-        cbdata=self.ui.cbAddBrandParent.currentData()
+    def cb_device_brand_changed(self):
+        cbdata=self.ui.cbAddDeviceBrand.currentData()
+        self.ui.cbAddDeviceModal.clear()
+        self.ui.cbAddDeviceModal.addItem('Select', None);
+        rows =  self.pself.connDB.execute("SELECT ID, title FROM tbl_brand WHERE parent=:parent", (cbdata, )).fetchall()
+        for row in rows:
+            self.ui.cbAddDeviceModal.addItem(row[1], row[0]);
 
-        if cbdata:        
-            brand['parent']=cbdata
-        else:
-            brand['parent']=0
 
-        #print(brand)
-        self.insert_brand(brand)
-        #print(emp)
+    def btn_AddDeviceSave(self):
+        device={}
+        device['brand_id']=self.ui.cbAddDeviceBrand.currentData()
+        device['model_id']=self.ui.cbAddDeviceModal.currentData()
+        device['serial_number']=self.ui.leAddDeviceNumber.text()
+        device['manufature_year']=self.ui.deAddDeviceManufatureYear.text()
+        device['buying_date']=self.ui.deAddDeviceBuyingDate.text()
+        self.insert_device(device)
 
-    def insert_brand(self, brand):
-        #pass
-        #print(self.pself.connDB)
-        #self.pself.connDB.execute("INSERT INTO tbl_brand (title, parent) VALUES (:title, :parent)",(brand['title'], brand['parent']));        
-        #self.pself.connDB.commit()
-       # print("insert brand into database successfully")
+
+    def insert_device(self, device):
+        self.pself.connDB.execute("INSERT INTO tbl_device (brand_id, model_id, serial_number, manufature_year, buying_date) VALUES (:brand_id, :model_id, :serial_number, :manufature_year, :buying_date)",(device['brand_id'], device['model_id'], device['serial_number'], device['manufature_year'], device['buying_date']));        
+        self.pself.connDB.commit()
+
         self.close()
         if not isinstance(self.pself.allDevice,  AllDevice):
             self.pself.allDevice= AllDevice(self.pself) 
@@ -61,18 +66,20 @@ class AddDevice(QWidget):
             self.pself.allDevice.activateWindow()   
 
 
-
     def closeEvent(self, event):
-        #pass
         self.pself.addDevice=None
-        #self.pself.activateWindow() 
+        self.pself.activateWindow() 
 
 
 """
-CREATE TABLE tbl_brand(
+CREATE TABLE tbl_device(
     ID INTEGER PRIMARY KEY AUTOINCREMENT,
-    title text,
-    parent INTEGER
+    brand_id INTEGER,
+    model_id INTEGER,
+    serial_number text,
+    manufature_year text,
+    buying_date INTEGER,
+    images txt,
 )
 
 """
